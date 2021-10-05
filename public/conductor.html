@@ -1,7 +1,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
-	<title>can I send play</title>
+	<title>Conductor</title>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<link href="fonts/fonts.css" rel="stylesheet">
@@ -13,21 +13,51 @@
 </head>
 
 <body>
+	<script>speed = 1; lastDate = 0</script>
 	<input type="range" id='speed' class='delay'  min="0.5" max="2.5" step="0.1" value="1" oninput="
 		speed =parseFloat(this.value); 
 		ws.send ('speed '+speed);
 		console.log('speed');
 		this.nextElementSibling.value =  ' tempo : '+this.value;
+		">	
+	<output>1</output>
 
+<button id="but" type="button" onclick="
+var msg = inscore.newMessageM('set');
+inscore.msgAddStr(msg, 'img');
+inscore.msgAddStr(msg, ' lib/time.png');
+inscore.postMessage('/ITL/scene/tl',msg);
+ws.send('tune duf');
+var msg2 = inscore.newMessageM('duration');
+inscore.msgAddI(msg2, 77);
+inscore.msgAddI(msg2, 4);
+inscore.postMessage('/ITL/scene/tl',msg2);
+      ">dufay</button>
 
+   <button id="delbut" type="button" onclick="
+var msg = inscore.newMessageM('set');
+inscore.msgAddStr(msg, 'img');
+inscore.msgAddStr(msg, ' lib/collier.png');
+inscore.postMessage('/ITL/scene/tl',msg);
+var msg2 = inscore.newMessageM('duration');
+inscore.msgAddI(msg2, 122);
+inscore.msgAddI(msg2, 4);
+inscore.postMessage('/ITL/scene/tl',msg2);
+// /ITL/scene/tl duration 77 4;
+ws.send('tune collier');
+   ">collier</button>
 
-
-		// inscore.postMessageStrI ('/ITL/scene/pos', 'tempo', speed*60);
-		// inscore.postMessageStrI ('tem = ', speed*60);
-		
-		">
-		<script>speed = 1; lastDate = 0</script>
-<output>1</output>
+   <button id="cur" type="button" onclick="
+var msg = inscore.newMessageM('set');
+inscore.msgAddStr(msg, 'img');
+inscore.msgAddStr(msg, ' lib/tallis.png');
+inscore.postMessage('/ITL/scene/tl',msg);
+ws.send('tune tallis');
+var msg2 = inscore.newMessageM('duration');
+inscore.msgAddI(msg2, 128);
+inscore.msgAddI(msg2, 4);
+inscore.postMessage('/ITL/scene/tl',msg2);
+   ">tallis</button>
 
 
 
