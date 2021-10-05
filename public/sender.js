@@ -28,20 +28,23 @@ function lastTime() {
     // console.log ("send", msg);
     var msg = inscore.newMessageM("date");
     inscore.msgAddF(msg, lastDate);
-    inscore.postMessage("/ITL/scene/pos", msg)
+    inscore.postMessage("/ITL/scene/pos", msg);
+    console.log("tyuytuytuyt")
     
 }
 
 function store (any) {
     // console.log ("send", msg);
     window.lastDate = parseFloat(any);
-}
+};
+
+
 
 function storedSpeed(speed) {
     var msg = inscore.newMessageM('tempo');
     inscore.msgAddF(msg, speed*60);
     inscore.postMessage('/ITL/scene/pos', msg);
-}
+};
 
 function storedDate(date) {
     var msg = inscore.newMessageM('tempo');
