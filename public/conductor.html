@@ -20,9 +20,6 @@
 		this.nextElementSibling.value =  ' tempo : '+this.value;
 
 
-		var msg = inscore.newMessageM('tempo')
-		inscore.msgAddF(msg, value)
-		inscore.postMessage('/ITL/scene/pos', msg)
 
 
 		// inscore.postMessageStrI ('/ITL/scene/pos', 'tempo', speed*60);
@@ -37,7 +34,8 @@
 <pre>
 	/ITL/scene watch PLAY (
 		/ITL/scene/javascript run "send('PLAY')",
-		/ITL/scene/pos tempo 60
+		/ITL/scene/javascript run "storedSpeed(speed)",
+		/ITL/scene/javascript run "storedDate(speed)"
 	);
 
 	/ITL/scene watch STOP (
@@ -48,7 +46,8 @@
 	
 	/ITL/scene watch PAUSE (
 		/ITL/scene/pos tempo 0,
-		/ITL/scene/javascript run "send('PAUSE')"
+		/ITL/scene/javascript run "send('PAUSE')",
+		/ITL/scene/javascript run "lastTime()"
 	);
 
 
@@ -62,7 +61,7 @@
 	alpha = 120;
 	rsrc  = 'rsrc/';
 	play  = $rsrc + 'play.png';
-	pause = $rsrc + 'pause.png';
+	pause = $rsrc + 'rewind.png';
 	stop  = $rsrc + 'stop.png';
 	
 	/ITL/scene/playPanel set rect 0.3 0.2;
@@ -128,7 +127,8 @@
 
 	move = ( 
 		/ITL/scene/pos date '$date%f',
-		/ITL/scene/javascript run "send('vdate $date%f')"
+		/ITL/scene/javascript run "send('vdate $date%f')",
+		/ITL/scene/javascript run "store('$date%f')"
 	);
 
 	/ITL/scene/tl watch mouseDown $move;
