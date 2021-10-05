@@ -18,10 +18,38 @@ function refresh(){
     setInterval(function(){send("dummy;")},10000)
 }
 var client = true;
+
 function send (msg) {
     // console.log ("send", msg);
     ws.send (msg);
 }
+
+function lastTime() {
+    // console.log ("send", msg);
+    var msg = inscore.newMessageM("date");
+    inscore.msgAddF(msg, lastDate);
+    inscore.postMessage("/ITL/scene/pos", msg)
+    
+}
+
+function store (any) {
+    // console.log ("send", msg);
+    window.lastDate = parseFloat(any);
+}
+
+function storedSpeed(speed) {
+    var msg = inscore.newMessageM('tempo');
+    inscore.msgAddF(msg, speed*60);
+    inscore.postMessage('/ITL/scene/pos', msg);
+}
+
+function storedDate(date) {
+    var msg = inscore.newMessageM('tempo');
+    inscore.msgAddF(msg, speed*60);
+    inscore.postMessage('/ITL/scene/pos', msg);
+}
+
+
 
 function receive (data) {
     let n = data.search(';');
