@@ -18,6 +18,13 @@
 		ws.send ('speed '+speed);
 		console.log('speed');
 		this.nextElementSibling.value =  ' tempo : '+this.value;
+
+
+		var msg = inscore.newMessageM('tempo')
+		inscore.msgAddF(msg, value)
+		inscore.postMessage('/ITL/scene/pos', msg)
+
+
 		// inscore.postMessageStrI ('/ITL/scene/pos', 'tempo', speed*60);
 		// inscore.postMessageStrI ('tem = ', speed*60);
 		
