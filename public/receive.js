@@ -19,11 +19,13 @@ ws.onmessage = function(msg) {
 
       case "PAUSE":
         vid.pause();
+        vid.currentTime = zozo;
         break;
 
       case "vdate":
           console.log(second);
         vid.currentTime = second*4;
+        zozo = second*4;
         break;
 
       case "dummy":
