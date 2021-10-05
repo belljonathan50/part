@@ -17,9 +17,13 @@ ws.onmessage = function(msg) {
         setTimeout( function(){vid.play(); console.log("hurrayyyyy");},delay);
         break;
 
-      case "PAUSE":
+      case "REWIND":
         vid.pause();
         vid.currentTime = zozo;
+        break;
+
+      case "PAUSE":
+        vid.pause();
         break;
 
       case "vdate":
