@@ -52,6 +52,16 @@ ws.onmessage = function(msg) {
           vid.src= "lib/vids/s/"+deuxieme+'.mp4';
           break;
 
+      case "boost":
+            console.log(deuxieme);
+            boost = deuxieme;
+            console.log('boost '+boost);
+            gainNode.gain.value = boost;
+            
+
+
+            break;
+
       case  "hit":
         var NowClientSide = new Date(ts.now());
         var forsee = parseInt(words[4]);
