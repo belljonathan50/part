@@ -34,9 +34,7 @@ function lastTime() {
 }
 
 function lastStop() {
-    // console.log ("send", msg);
-    lastDate = 0;
-    
+    lastDate = 0;  
 }
 
 function store (any) {
