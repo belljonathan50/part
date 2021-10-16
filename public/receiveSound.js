@@ -52,7 +52,7 @@ ws.onmessage = function(msg) {
       case "tune":
           console.log(deuxieme);
           audioElement.src= "lib/vids/"+thispath+"/"+deuxieme+'.mp4';
-          console.log(vid.src);
+          console.log(audioElement.src);
           break;
 
       case "boost":
