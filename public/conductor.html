@@ -39,7 +39,7 @@ var msg2 = inscore.newMessageM('duration');
 inscore.msgAddI(msg2, 77);
 inscore.msgAddI(msg2, 4);
 inscore.postMessage('/ITL/scene/tl',msg2);
-      ">dufay</button>
+">dufay</button>
 
 <button id="but2" type="button" onclick="
 var msg = inscore.newMessageM('set');
@@ -51,7 +51,7 @@ var msg2 = inscore.newMessageM('duration');
 inscore.msgAddI(msg2, 77);
 inscore.msgAddI(msg2, 4);
 inscore.postMessage('/ITL/scene/tl',msg2);
-      ">dufay mesuré</button>
+">dufay mesuré</button>
 
    <button id="delbut" type="button" onclick="
 var msg = inscore.newMessageM('set');
@@ -128,7 +128,8 @@ inscore.postMessage('/ITL/scene/tl',msg2);
 	/ITL/scene watch STOP (
 		/ITL/scene/pos tempo 0,
 		/ITL/scene/pos date 0,
-		/ITL/scene/javascript run "send('STOP')"
+		/ITL/scene/javascript run "send('STOP')",
+		/ITL/scene/javascript run "lastStop()"
 	);
 	
 	/ITL/scene watch PAUSE (
