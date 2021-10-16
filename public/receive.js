@@ -45,6 +45,7 @@ ws.onmessage = function(msg) {
       case "STOP":
         vid.pause();
         vid.currentTime = 0;
+        zozo = 0;
         break;
 
       case "tune":
