@@ -33,6 +33,12 @@ function lastTime() {
     
 }
 
+function lastStop() {
+    // console.log ("send", msg);
+    lastDate = 0;
+    
+}
+
 function store (any) {
     // console.log ("send", msg);
     window.lastDate = parseFloat(any);
