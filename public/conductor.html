@@ -22,11 +22,11 @@
 		">	
 	<output>1</output>
 
-	<input type="range" id='boost' class='delay'  min="0" max="32" step="0.1" value="1" oninput="
+	<!-- <input type="range" id='boost' class='delay'  min="0" max="12" step="0.1" value="1" oninput="
 	bo =parseFloat(this.value); 
 	ws.send ('boost '+ bo);
 	this.nextElementSibling.value =  ' vol : '+this.value;
-	">	
+	">	 -->
 <output>vol</output>
 
 <button id="but" type="button" onclick="
@@ -51,7 +51,7 @@ var msg2 = inscore.newMessageM('duration');
 inscore.msgAddI(msg2, 77);
 inscore.msgAddI(msg2, 4);
 inscore.postMessage('/ITL/scene/tl',msg2);
-">dufay mesuré</button>
+">dufay piano</button>
 
    <button id="delbut" type="button" onclick="
 var msg = inscore.newMessageM('set');
@@ -65,6 +65,19 @@ inscore.postMessage('/ITL/scene/tl',msg2);
 // /ITL/scene/tl duration 77 4;
 ws.send('tune collier');
    ">collier</button>
+
+<button id="delbut" type="button" onclick="
+var msg = inscore.newMessageM('set');
+inscore.msgAddStr(msg, 'img');
+inscore.msgAddStr(msg, ' lib/collier.png');
+inscore.postMessage('/ITL/scene/tl',msg);
+var msg2 = inscore.newMessageM('duration');
+inscore.msgAddI(msg2, 122);
+inscore.msgAddI(msg2, 4);
+inscore.postMessage('/ITL/scene/tl',msg2);
+// /ITL/scene/tl duration 77 4;
+ws.send('tune collier2');
+   ">collier isn't</button>
 
    <button id="cur" type="button" onclick="
 var msg = inscore.newMessageM('set');
