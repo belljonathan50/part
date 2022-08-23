@@ -14,7 +14,7 @@
 
 <body>
 	<script>speed = 1; lastDate = 0</script>
-	<input type="range" id='speed' class='delay'  min="0.5" max="2.5" step="0.1" value="1" oninput="
+	<input type="range" id='speed' class='delay'  min="0.1" max="2.5" step="0.1" value="1" oninput="
 		speed =parseFloat(this.value); 
 		ws.send ('speed '+speed);
 		console.log('speed');
@@ -69,7 +69,7 @@ ws.send('tune collier');
 <button id="delbut" type="button" onclick="
 var msg = inscore.newMessageM('set');
 inscore.msgAddStr(msg, 'img');
-inscore.msgAddStr(msg, ' lib/collier.png');
+inscore.msgAddStr(msg, ' lib/isnt.png');
 inscore.postMessage('/ITL/scene/tl',msg);
 var msg2 = inscore.newMessageM('duration');
 inscore.msgAddI(msg2, 122);
@@ -127,6 +127,30 @@ inscore.msgAddI(msg2, 385);
 inscore.msgAddI(msg2, 4);
 inscore.postMessage('/ITL/scene/tl',msg2);
    ">mouton2</button>
+
+<button id="mute" type="button" onclick="
+var msg = inscore.newMessageM('set');
+inscore.msgAddStr(msg, 'img');
+inscore.msgAddStr(msg, ' lib/somewhere.png');
+inscore.postMessage('/ITL/scene/tl',msg);
+ws.send('tune somewhere');
+var msg2 = inscore.newMessageM('duration');
+inscore.msgAddI(msg2, 40);
+inscore.msgAddI(msg2, 4);
+inscore.postMessage('/ITL/scene/tl',msg2);
+   ">somewhere</button>
+
+<button id="mute" type="button" onclick="
+var msg = inscore.newMessageM('set');
+inscore.msgAddStr(msg, 'img');
+inscore.msgAddStr(msg, ' lib/machaut.png');
+inscore.postMessage('/ITL/scene/tl',msg);
+ws.send('tune machaut');
+var msg2 = inscore.newMessageM('duration');
+inscore.msgAddI(msg2, 60);
+inscore.msgAddI(msg2, 4);
+inscore.postMessage('/ITL/scene/tl',msg2);
+   ">machaut</button>
 
 
 
@@ -246,7 +270,7 @@ inscore.postMessage('/ITL/scene/tl',msg2);
 	/ITL/scene/tl penWidth 1;
 	/ITL/scene/tl color white;
 	/ITL/scene/tl y -0.5;
-	/ITL/scene/tl duration 77 4;
+	/ITL/scene/tl duration 186 4;
 	
 	/ITL/scene/pos set rect 0.02 0.1;
 	/ITL/scene/pos color red;
